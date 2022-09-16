@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="build.css">
+  <meta charset="utf-8">
+</head>
+<body>
+  <div id="background" class="relative flex flex-col w-screen h-screen p-12 bg-no-repeat bg-cover">
+    <div class="text-[6rem] uppercase font-extrabold text-white" style="text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2)">„<span id="quote"></span>“</div>
+    <div class="flex-grow"></div>
+    <div class="flex justify-end text-[3rem] uppercase font-extrabold text-white" style="text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2)">Why we ❤️ coffee #<span id="edition"></span></div>
+  </div>
+</body>
+<script>
+const params = new URLSearchParams(window.location.search)
+
+const quote = params.get('quote')
+const edition = params.get('number')
+const backgroundImage = params.get('image')
+
+document.getElementById('quote').textContent = quote
+document.getElementById('edition').textContent = edition
+document.getElementById('background').style.backgroundImage = `url(${backgroundImage})`
+</script>
+</html>
