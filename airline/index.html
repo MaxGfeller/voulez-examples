@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="build.css">
+</head>
+<body>
+  <div id="background" class="relative w-screen h-screen bg-no-repeat bg-cover">
+    <div id="seal" class="rotate-12 absolute flex items-center justify-center w-56 h-56 rounded-full top-20 right-20 border-8 border-[#c90387] bg-blue-500 bg-opacity-30 font-bold text-4xl text-white text-center">Seal of<br>Approval</div>
+    <div class="absolute left-0 right-0 z-20 flex flex-col bg-no-repeat bg-cover bg-origin-content h-96 bottom-20" style="background-image: url(background.png)">
+      <div class="mt-32 ml-12 text-5xl font-black text-white">
+        Top 5 things<br>
+        to do in <span id="location"></span>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+const params = new URLSearchParams(window.location.search)
+
+const placeName = params.get('location')
+const showSeal = params.get('showSeal') === 'true'
+const backgroundImage = params.get('image')
+
+document.getElementById('location').textContent = placeName
+document.getElementById('background').style.backgroundImage = `url(${backgroundImage})`
+if (!showSeal) {
+  document.getElementById('seal').style.display = 'none'
+}
+</script>
+</html>
