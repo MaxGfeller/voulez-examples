@@ -1,0 +1,16 @@
+{
+  "name": "@voulez-examples/airline",
+  "version": "1.0.0",
+  "description": "Example project for Voulez",
+  "main": "index.html",
+  "scripts": {
+    "watch-css": "tailwindcss -i ./style.css -o ./build.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.1.8"
+  }
+}
